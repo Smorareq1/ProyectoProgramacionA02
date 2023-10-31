@@ -17,6 +17,7 @@ myDoubleLinkedList::~myDoubleLinkedList() { //Destructor
     }
 }
 
+
 void myDoubleLinkedList::addSorted(std::string data) {
     Node* newNode = new Node;
     newNode->data = data;
