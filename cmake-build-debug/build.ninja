@@ -57,6 +57,14 @@ build CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj: CXX_COMPILER__ProyectoAp
   TARGET_COMPILE_PDB = CMakeFiles\ProyectoAplicacion02.dir\
   TARGET_PDB = ProyectoAplicacion02.pdb
 
+build CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj: CXX_COMPILER__ProyectoAplicacion02_unscanned_Debug C$:/Users/smora/Documents/C++$ Clion/ProyectoAplicacion02/myDoubleLinkedList.cpp || cmake_object_order_depends_target_ProyectoAplicacion02
+  DEP_FILE = CMakeFiles\ProyectoAplicacion02.dir\myDoubleLinkedList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ProyectoAplicacion02.dir
+  OBJECT_FILE_DIR = CMakeFiles\ProyectoAplicacion02.dir
+  TARGET_COMPILE_PDB = CMakeFiles\ProyectoAplicacion02.dir\
+  TARGET_PDB = ProyectoAplicacion02.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ProyectoAplicacion02
@@ -65,7 +73,7 @@ build CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj: CXX_COMPILER__ProyectoAp
 #############################################
 # Link the executable ProyectoAplicacion02.exe
 
-build ProyectoAplicacion02.exe: CXX_EXECUTABLE_LINKER__ProyectoAplicacion02_Debug CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj
+build ProyectoAplicacion02.exe: CXX_EXECUTABLE_LINKER__ProyectoAplicacion02_Debug CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ProyectoAplicacion02.dir

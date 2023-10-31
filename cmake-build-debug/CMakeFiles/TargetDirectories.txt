@@ -1,3 +1,3 @@
-C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/cmake-build-debug/CMakeFiles/ProyectoAplicacion02.dir
-C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/smora/Documents/C++ Clion/ProyectoAplicacion02/cmake-build-debug/CMakeFiles/ProyectoAplicacion02.dir
+C:/Users/smora/Documents/C++ Clion/ProyectoAplicacion02/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/smora/Documents/C++ Clion/ProyectoAplicacion02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
