@@ -54,3 +54,15 @@ void myDoubleLinkedList::addSorted(std::string data) {
     size++;
 
 }
+
+void myDoubleLinkedList::print() {
+    Node* current = head;
+    while (current) {
+        std::cout << current->data << std::endl;
+        current = current->next;
+    }
+}
+
+int myDoubleLinkedList::sizeOfMyList() {
+    return size;
+}
