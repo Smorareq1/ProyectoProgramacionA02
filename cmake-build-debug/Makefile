@@ -152,6 +152,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProyectoAplicacion02.dir\build.make CMakeFiles/ProyectoAplicacion02.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+myDoubleLinkedList.obj: myDoubleLinkedList.cpp.obj
+.PHONY : myDoubleLinkedList.obj
+
+# target to build an object file
+myDoubleLinkedList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProyectoAplicacion02.dir\build.make CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj
+.PHONY : myDoubleLinkedList.cpp.obj
+
+myDoubleLinkedList.i: myDoubleLinkedList.cpp.i
+.PHONY : myDoubleLinkedList.i
+
+# target to preprocess a source file
+myDoubleLinkedList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProyectoAplicacion02.dir\build.make CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.i
+.PHONY : myDoubleLinkedList.cpp.i
+
+myDoubleLinkedList.s: myDoubleLinkedList.cpp.s
+.PHONY : myDoubleLinkedList.s
+
+# target to generate assembly for a file
+myDoubleLinkedList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProyectoAplicacion02.dir\build.make CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.s
+.PHONY : myDoubleLinkedList.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +188,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... myDoubleLinkedList.obj
+	@echo ... myDoubleLinkedList.i
+	@echo ... myDoubleLinkedList.s
 .PHONY : help
 
 

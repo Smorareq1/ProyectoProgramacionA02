@@ -25,6 +25,7 @@ public:
 
     void addSorted(std::string data);
     void print();
+    void binarySearch(std::string value);
     int sizeOfMyList();
 };
 

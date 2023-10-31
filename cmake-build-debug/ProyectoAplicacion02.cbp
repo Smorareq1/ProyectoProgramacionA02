@@ -85,6 +85,12 @@
 		<Unit filename="C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/main.cpp">
 			<Option target="ProyectoAplicacion02"/>
 		</Unit>
+		<Unit filename="C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/myDoubleLinkedList.cpp">
+			<Option target="ProyectoAplicacion02"/>
+		</Unit>
+		<Unit filename="C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/myDoubleLinkedList.h">
+			<Option target="ProyectoAplicacion02"/>
+		</Unit>
 		<Unit filename="C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

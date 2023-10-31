@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/main.cpp" "CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj" "gcc" "CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj.d"
+  "C:/Users/smora/OneDrive/Documents/URL/PA/ProyectoProgramacionA02/myDoubleLinkedList.cpp" "CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj" "gcc" "CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

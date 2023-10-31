@@ -66,3 +66,30 @@ void myDoubleLinkedList::print() {
 int myDoubleLinkedList::sizeOfMyList() {
     return size;
 }
+
+void myDoubleLinkedList::binarySearch(std::string value) {
+    int low = 0;
+    int high = size - 1;
+    int mid = 0;
+    bool found = false;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        Node* current = head;
+        for (int i = 0; i < mid; i++) {
+            current = current->next;
+        }
+        if (current->data == value) {
+            found = true;
+            break;
+        } else if (current->data > value) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    if (found) {
+        std::cout << value << std::endl;
+    } else {
+        std::cout << "Not found" << std::endl;
+    }
+}

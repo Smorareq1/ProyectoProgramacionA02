@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj"
   "CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj.d"
+  "CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj"
+  "CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj.d"
   "ProyectoAplicacion02.exe"
   "ProyectoAplicacion02.exe.manifest"
   "ProyectoAplicacion02.pdb"
