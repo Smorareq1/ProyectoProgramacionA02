@@ -52,4 +52,5 @@ void myDoubleLinkedList::addSorted(std::string data) {
         }
     }
     size++;
+
 }
