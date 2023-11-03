@@ -18,5 +18,6 @@ int main() {
     string dato;
     cin>>dato;
     list.binarySearch(dato);
+
     return 0;
 }
