@@ -1,13 +1,8 @@
 # ninja log v5
-0	212	7204291661307908	CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj	ccc0c32a6404f67e
-6	215	7204291661337908	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
-215	315	7204291662320329	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
-2	201	7204291940419224	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
-201	264	7204291941044247	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
-1	197	7204292440222288	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
-2	199	7204292721470227	CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj	ccc0c32a6404f67e
-208	271	7204292722174581	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
-2	206	7204293207854694	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
-206	276	7204293208530783	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
-2	200	7204293266241972	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
-200	266	7204293266877082	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
+0	204	7206792437713749	CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj	ccc0c32a6404f67e
+5	210	7206792437713749	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
+210	301	7206792438682901	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
+1	201	7206792588183214	CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj	79d8e0ce474bf1a3
+201	268	7206792588833225	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
+2	205	7206794059650961	CMakeFiles/ProyectoAplicacion02.dir/myDoubleLinkedList.cpp.obj	ccc0c32a6404f67e
+205	273	7206794060316223	ProyectoAplicacion02.exe	3d9d7203ddd1e6ee
