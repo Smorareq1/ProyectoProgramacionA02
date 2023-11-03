@@ -8,9 +8,9 @@ using namespace std;
 
 int main() {
     myDoubleLinkedList list;
-    list.addSorted("AAA");
-    list.addSorted("AAA");
-    list.addSorted("123");
+    for(int i  = 0; i < 10; i++){
+        list.addSorted(to_string(i));
+    }
     list.print();
     cout<<list.sizeOfMyList()<<endl;
 
