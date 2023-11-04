@@ -6,18 +6,10 @@
 #include "LineData.h"
 
 
-
-
-
-Hashear::Hashear() {
-
-}
-
 std::string Hashear::hashKey(const std::string& key) {
     std::hash<std::string> hasher;
     std::size_t hashedKey = hasher(key);
     return std::to_string(hashedKey).substr(0, 10);
-
 }
 
 
@@ -39,12 +31,10 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
             restOfLine = linea;  // restOfLine contiene toda la línea original
         }
 
-
         std::string hashedKey = hashKey(key);
         LineData lineData(hashedKey, restOfLine);
         myDoubleList->addSorted(lineData);
     }
-
     archivo.close();
 }
 
