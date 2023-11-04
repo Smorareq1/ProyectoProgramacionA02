@@ -9,23 +9,33 @@ using namespace std;
 
 void menuPrincipal();
 myDoubleLinkedList *lista = new myDoubleLinkedList();
+Hashear *hashear = new Hashear();
 
-
+/////////////////////////////////////////////////////////////////////////////////////
 void cargarDatos(){
-    Hashear *hashear = new Hashear();
+
     string nombreArchivo;
 
     cout<<"Ingrese el nombre del archivo que desea cargar: "<<endl;
     std::cin.ignore();
     std::getline(std::cin, nombreArchivo);
-    hashear->procesarArchivo(nombreArchivo);
-
-    hashear->myDoubleList->print();
+    hashear->procesarArchivo(nombreArchivo, lista);
 
     menuPrincipal();
 
 }
+/////////////////////////////////////////////////////////////////////////////////////
+void buscarPorKey(){
+    string key, result;
+    cout<<"Ingrese la key que desea buscar: "<<endl;
+    std::cin.ignore();
+    std::getline(std::cin, key);
 
+    result = hashear->hashKey(key);
+    lista->binarySearch(result);
+    menuPrincipal();
+}
+/////////////////////////////////////////////////////////////////////////////////////
 void menuPrincipal(){
 
     int opcion;
@@ -51,7 +61,7 @@ void menuPrincipal(){
                 cargarDatos();
                 break;
             case 2:
-
+                buscarPorKey();
                 break;
             case 3:
 
@@ -66,7 +76,7 @@ void menuPrincipal(){
         }
     }
 }
-
+/////////////////////////////////////////////////////////////////////////////////////
 int main() {
 
     menuPrincipal();

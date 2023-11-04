@@ -6,43 +6,22 @@
 #include "LineData.h"
 
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <unordered_set>
+
 
 
 Hashear::Hashear() {
 
-        myDoubleList = new myDoubleLinkedList();
-
 }
 
 std::string Hashear::hashKey(const std::string& key) {
-    std::unordered_set<std::string> hashSet;
     std::hash<std::string> hasher;
-    std::string hashedKey = key; // Inicializa hashedKey con el valor original
+    std::size_t hashedKey = hasher(key);
+    return std::to_string(hashedKey).substr(0, 10);
 
-    while (true) {
-        std::size_t hashValue = hasher(hashedKey);
-        std::string hashString = std::to_string(hashValue);
-
-        hashString.resize(10, '0');
-        std::string result = hashString.substr(0, 10);
-
-        if (hashSet.find(result) == hashSet.end()) {
-            // No hay colisión, retornar el hash
-            return result;
-        } else {
-            // Hay colisión, intentar con el siguiente hash
-            hashedKey = result;
-        }
-    }
 }
 
 
-void Hashear::procesarArchivo(const std::string& rutaArchivo) {
+void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleList) {
     std::ifstream archivo(rutaArchivo);
     if (!archivo) {
         std::cout << "No se pudo abrir el archivo: " << rutaArchivo << '\n';

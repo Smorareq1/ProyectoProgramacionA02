@@ -10,15 +10,21 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <sstream>
+
+#include <functional>
+
 #include "myDoubleLinkedList.h"
 
 class Hashear {
 public:
     Hashear();
     std::string hashKey(const std::string& key);
-    void procesarArchivo(const std::string& filename);
 
-    myDoubleLinkedList* myDoubleList;
+
+    void procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleList);
+
+
 };
 
 
