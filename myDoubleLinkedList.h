@@ -6,12 +6,8 @@
 #define PROYECTOAPLICACION02_MYDOUBLELINKEDLIST_H
 
 #include <string>
-
-struct Node {
-    std::string data;
-    Node *next;
-    Node *prev;
-};
+#include "Node.h"
+#include "LineData.h"
 
 class myDoubleLinkedList {
 private:
@@ -23,9 +19,10 @@ public:
     myDoubleLinkedList();
     ~myDoubleLinkedList();
 
-    void addSorted(std::string data);
+    void addSorted(const LineData& data);
     void print();
     void binarySearch(std::string value);
+    void clearList();
     int sizeOfMyList();
 };
 

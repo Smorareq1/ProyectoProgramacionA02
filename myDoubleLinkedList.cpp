@@ -1,70 +1,58 @@
-//
-// Created by smora on 30/10/2023.
-//
-
 #include "myDoubleLinkedList.h"
-
 #include <iostream>
 
-myDoubleLinkedList::myDoubleLinkedList() : head(nullptr), tail(nullptr), size(0) {} //Constructor
+myDoubleLinkedList::myDoubleLinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
-myDoubleLinkedList::~myDoubleLinkedList() { //Destructor
+myDoubleLinkedList::~myDoubleLinkedList() {
+    clearList();
+}
+
+void myDoubleLinkedList::clearList() {
     Node* current = head;
     while (current) {
         Node* next = current->next;
         delete current;
         current = next;
     }
+    head = nullptr;
+    tail = nullptr;
+    size = 0;
 }
 
-
-void myDoubleLinkedList::addSorted(std::string data) {
-    Node* newNode = new Node;
-    newNode->data = data;
-    newNode->next = nullptr;
-    newNode->prev = nullptr;
-
+void myDoubleLinkedList::addSorted(const LineData& data) {
+    Node* newNode = new Node{data};
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
     } else {
         Node* current = head;
-        while (current) {
-            if (current->data > data) {
-                if (current == head) {
-                    newNode->next = current;
-                    current->prev = newNode;
-                    head = newNode;
-                } else {
-                    newNode->next = current;
-                    newNode->prev = current->prev;
-                    current->prev->next = newNode;
-                    current->prev = newNode;
-                }
-                break;
-            } else if (current == tail) {
-                newNode->prev = current;
-                current->next = newNode;
-                tail = newNode;
-                break;
-            }
+        while (current && current->data.hashedKey < data.hashedKey) {
             current = current->next;
+        }
+        if (current) {
+            newNode->prev = current->prev;
+            newNode->next = current;
+            if (current->prev) {
+                current->prev->next = newNode;
+            } else {
+                head = newNode;
+            }
+            current->prev = newNode;
+        } else {
+            newNode->prev = tail;
+            tail->next = newNode;
+            tail = newNode;
         }
     }
     size++;
-
 }
 
 void myDoubleLinkedList::print() {
     Node* current = head;
     while (current) {
-        std::cout << current->data << std::endl;
+        std::cout << current->data.restOfLine << std::endl;
         current = current->next;
     }
-}
-
-int myDoubleLinkedList::sizeOfMyList() {
-    return size;
 }
 
 void myDoubleLinkedList::binarySearch(std::string value) {
@@ -73,38 +61,43 @@ void myDoubleLinkedList::binarySearch(std::string value) {
     bool found = false;
 
     while (low <= high) {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
         Node* current = head;
         for (int i = 0; i < mid; i++) {
             current = current->next;
         }
 
-        if (current->data == value) {
+        if (current->data.hashedKey == value) {
             found = true;
-            std::cout << current->data << std::endl;
+            std::cout << "Encontrado: " << current->data.restOfLine << std::endl;
 
             // Buscar hacia la izquierda
             Node* left = current->prev;
-            while (left && left->data == value) {
-                std::cout << left->data << std::endl;
+            while (left && left->data.hashedKey == value) {
+                std::cout << "Encontrado: " << left->data.restOfLine << std::endl;
                 left = left->prev;
             }
 
             // Buscar hacia la derecha
             Node* right = current->next;
-            while (right && right->data == value) {
-                std::cout << right->data << std::endl;
+            while (right && right->data.hashedKey == value) {
+                std::cout << "Encontrado: " << right->data.restOfLine << std::endl;
                 right = right->next;
             }
             break;
-        } else if (current->data > value) {
-            high = mid - 1;
-        } else {
+        } else if (current->data.hashedKey < value) {
             low = mid + 1;
+        } else {
+            high = mid - 1;
         }
     }
 
     if (!found) {
-        std::cout << "Not found" << std::endl;
+        std::cout << "No encontrado" << std::endl;
     }
+}
+
+
+int myDoubleLinkedList::sizeOfMyList() {
+    return size;
 }
