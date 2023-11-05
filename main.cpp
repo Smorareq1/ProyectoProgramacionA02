@@ -21,6 +21,7 @@ void cargarDatos(){
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, lista);
     lista->sortList();
+    lista->print();
     menuPrincipal();
 
 }
