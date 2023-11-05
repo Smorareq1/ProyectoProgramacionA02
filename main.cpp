@@ -15,13 +15,12 @@ Hashear *hashear = new Hashear();
 void cargarDatos(){
 
     string nombreArchivo;
-
     cout<<"Ingrese el nombre del archivo que desea cargar: "<<endl;
     std::cin.ignore();
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, lista);
     lista->sortList();
-    lista->print();
+
     menuPrincipal();
 
 }
@@ -35,6 +34,10 @@ void buscarPorKey(){
     result = hashear->hashKey(key);
     lista->binarySearch(result);
     menuPrincipal();
+}
+/////////////////////////////////////////////////////////////////////////////////////
+void buscarPorValor(){
+
 }
 /////////////////////////////////////////////////////////////////////////////////////
 void menuPrincipal(){
@@ -65,7 +68,7 @@ void menuPrincipal(){
                 buscarPorKey();
                 break;
             case 3:
-
+                buscarPorValor();
                 break;
             case 4:
 

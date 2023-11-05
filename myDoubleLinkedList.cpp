@@ -51,7 +51,7 @@ void myDoubleLinkedList::addSorted(const LineData& data) {
 void myDoubleLinkedList::print() {
     Node* current = head;
     while (current) {
-        std::cout << current->data.restOfLine<< std::endl;
+        std::cout << current->data.hashedKey<< std::endl;
         current = current->next;
     }
 }
