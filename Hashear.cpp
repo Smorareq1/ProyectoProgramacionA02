@@ -6,7 +6,6 @@
 #include "LineData.h"
 
 Hashear::Hashear() {
-
 }
 
 std::string Hashear::hashKey(const std::string& key) {
