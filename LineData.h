@@ -12,8 +12,10 @@ public:
     std::string hashedKey;
     std::string restOfLine;
 
-    LineData(const std::string& hashedKey, const std::string& restOfLine)
-            : hashedKey(hashedKey), restOfLine(restOfLine) {}
+    LineData(const std::string& hashedKey, const std::string& restOfLine);
+
+      ///////////////////////////////////////////
+      bool operator<(const LineData& other) const;
 };
 
 

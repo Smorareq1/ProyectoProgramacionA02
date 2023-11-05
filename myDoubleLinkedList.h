@@ -24,6 +24,11 @@ public:
     void binarySearch(std::string value);
     void clearList();
     int sizeOfMyList();
+    ///////////////////////////// PRUEBA
+    void addElement(const LineData& data);
+    Node* partition(Node* low, Node* high);
+    void quickSort(Node* low, Node* high);
+    void sortList();
 };
 
 

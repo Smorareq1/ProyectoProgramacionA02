@@ -20,7 +20,7 @@ void cargarDatos(){
     std::cin.ignore();
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, lista);
-
+    lista->sortList();
     menuPrincipal();
 
 }

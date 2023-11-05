@@ -34,7 +34,7 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
 
         std::string hashedKey = hashKey(key);
         LineData lineData(hashedKey, restOfLine);
-        myDoubleList->addSorted(lineData);
+        myDoubleList->addElement(lineData);
     }
 
     archivo.close();

@@ -19,6 +19,7 @@ void myDoubleLinkedList::clearList() {
     size = 0;
 }
 
+
 void myDoubleLinkedList::addSorted(const LineData& data) {
     Node* newNode = new Node{data};
     if (head == nullptr) {
@@ -101,3 +102,50 @@ void myDoubleLinkedList::binarySearch(std::string value) {
 int myDoubleLinkedList::sizeOfMyList() {
     return size;
 }
+///////////////////////////////////////////////////////
+void myDoubleLinkedList::addElement(const LineData& data){
+    Node* newNode = new Node{data};
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->prev = tail;
+        tail->next = newNode;
+        tail = newNode;
+    }
+    size++;
+}
+
+Node* myDoubleLinkedList::partition(Node* low, Node* high) {
+    LineData pivot = high->data;
+    Node* i = low->prev;
+
+    for (Node* j = low; j != high; j = j->next) {
+        if (j->data < pivot) {
+            i = (i == nullptr) ? low : i->next;
+            std::swap(i->data, j->data);
+        }
+    }
+
+    i = (i == nullptr) ? low : i->next;
+    std::swap(i->data, high->data);
+    return i;
+}
+
+
+void myDoubleLinkedList::quickSort(Node* low, Node* high) {
+    if (high != nullptr && low != high && low != high->next) {
+        Node* pivot = partition(low, high);
+        quickSort(low, pivot->prev);
+        quickSort(pivot->next, high);
+    }
+}
+
+void myDoubleLinkedList::sortList() {
+    quickSort(head, tail);
+}
+
+
+
+
+
