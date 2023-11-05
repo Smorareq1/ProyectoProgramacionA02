@@ -22,9 +22,7 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
         std::cout << "No se pudo abrir el archivo: " << rutaArchivo << '\n';
         return;
     }
-
     std::string linea;
-
     while (std::getline(archivo, linea)) {
         std::istringstream lineStream(linea);
         std::string token, key, restOfLine;
