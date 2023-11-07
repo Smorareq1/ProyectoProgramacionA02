@@ -20,34 +20,6 @@ void myDoubleLinkedList::clearList() {
 }
 
 
-void myDoubleLinkedList::addSorted(const LineData& data) {
-    Node* newNode = new Node{data};
-    if (head == nullptr) {
-        head = newNode;
-        tail = newNode;
-    } else {
-        Node* current = head;
-        while (current && current->data.hashedKey < data.hashedKey) {
-            current = current->next;
-        }
-        if (current) {
-            newNode->prev = current->prev;
-            newNode->next = current;
-            if (current->prev) {
-                current->prev->next = newNode;
-            } else {
-                head = newNode;
-            }
-            current->prev = newNode;
-        } else {
-            newNode->prev = tail;
-            tail->next = newNode;
-            tail = newNode;
-        }
-    }
-    size++;
-}
-
 void myDoubleLinkedList::print() {
     Node* current = head;
     while (current) {
@@ -144,6 +116,127 @@ void myDoubleLinkedList::quickSort(Node* low, Node* high) {
 void myDoubleLinkedList::sortList() {
     quickSort(head, tail);
 }
+/////////////////////////////////////////////////////////////////////////////////
+
+void myDoubleLinkedList::printByValue() {
+    Node* current = head;
+    while (current) {
+        std::cout << current->value << std::endl;
+        current = current->next;
+    }
+}
+
+void myDoubleLinkedList::addElementByValue(std::string value){
+    Node* newNode = new Node{value};
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->prev = tail;
+        tail->next = newNode;
+        tail = newNode;
+    }
+    size++;
+}
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+void myDoubleLinkedList::sortColumns(int column) {
+    std::vector<Node*> nodes;
+    Node* current = head;
+    while (current) {
+        nodes.push_back(current);
+        current = current->next;
+    }
+
+    std::sort(nodes.begin(), nodes.end(), [column](Node* a, Node* b) {
+        std::istringstream streamA(a->value);
+        std::istringstream streamB(b->value);
+        std::string tokenA, tokenB;
+        for (int i = 0; i < column; ++i) {
+            std::getline(streamA, tokenA, ',');
+            std::getline(streamB, tokenB, ',');
+        }
+        return tokenA < tokenB;
+    });
+
+    head = nodes[0];
+    tail = nodes.back();
+    for (size_t i = 1; i < nodes.size(); ++i) {
+        nodes[i]->prev = nodes[i - 1];
+        nodes[i - 1]->next = nodes[i];
+    }
+    tail->next = nullptr;
+}
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+int myDoubleLinkedList::countColumns(const std::string &value) {
+    std::istringstream stream(value);
+    std::string token;
+    int count = 0;
+    while (std::getline(stream, token, ',')) {
+        ++count;
+    }
+    return count;
+}
+
+Node* myDoubleLinkedList::getNodeAt(int index) const {
+    if (index < 0 || index >= size) {
+        return nullptr;
+    }
+
+    Node* current = head;
+    for (int i = 0; i < index; ++i) {
+        current = current->next;
+    }
+
+    return current;
+}
+
+
+void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& value) {
+    sortColumns(column);
+    std::vector<std::string> results; // Vector para almacenar las coincidencias
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        Node* current = getNodeAt(mid);
+
+        std::istringstream stream(current->value);
+        std::string token;
+        for (int i = 0; i < column; ++i) {
+            std::getline(stream, token, ',');
+        }
+
+        if (token == value) {
+            results.push_back(current->value);
+            // Mueve el índice 'right' hacia la izquierda para buscar más coincidencias
+            right = mid - 1;
+        } else if (token < value) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    if (!results.empty()) {
+        std::cout << "Coincidencias encontradas:" << std::endl;
+        for (const auto& match : results) {
+            std::cout << match << std::endl;
+        }
+    }
+
+    if (column < countColumns(head->value)) {
+        binarySearchByColumn(column + 1, value);
+    }
+
+}
+
+
+
+
+
 
 
 

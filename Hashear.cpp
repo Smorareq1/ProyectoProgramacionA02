@@ -15,7 +15,7 @@ std::string Hashear::hashKey(const std::string& key) {
 }
 
 
-void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleList) {
+void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleListHash, myDoubleLinkedList* myDoubleLinkedListValues) {
     std::ifstream archivo(rutaArchivo);
     if (!archivo) {
         std::cout << "No se pudo abrir el archivo: " << rutaArchivo << '\n';
@@ -33,7 +33,9 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
 
         std::string hashedKey = hashKey(key);
         LineData lineData(hashedKey, restOfLine);
-        myDoubleList->addElement(lineData);
+        myDoubleListHash->addElement(lineData);
+        myDoubleLinkedListValues->addElementByValue(restOfLine);
+
     }
 
     archivo.close();
