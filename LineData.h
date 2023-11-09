@@ -12,6 +12,7 @@ public:
     std::string hashedKey;
     std::string restOfLine;
 
+    LineData() : hashedKey(""), restOfLine("") {}
     LineData(const std::string& hashedKey, const std::string& restOfLine);
 
       ///////////////////////////////////////////

@@ -6,14 +6,19 @@
 #define PROYECTOAPLICACION02_NODE_H
 
 #include "LineData.h"
+#include <string>
 
 class Node {
 public:
     LineData data;
+    std::string value;
+
     Node* next;
     Node* prev;
 
+    // Constructores
     Node(const LineData& newData);
+    Node(const std::string& newValue);
 };
 
 

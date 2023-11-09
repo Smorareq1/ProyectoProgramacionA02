@@ -22,7 +22,7 @@ public:
     std::string hashKey(const std::string& key);
 
 
-    void procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleList);
+    void procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleListHash, myDoubleLinkedList* myDoubleLinkedListValues);
 
 
 };
