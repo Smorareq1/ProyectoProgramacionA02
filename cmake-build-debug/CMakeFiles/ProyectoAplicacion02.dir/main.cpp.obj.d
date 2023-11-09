@@ -147,21 +147,36 @@ CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
  C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\myDoubleLinkedList.h \
- C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\Node.h \
- C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\LineData.h \
- C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\Hashear.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
+ C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\Node.h \
+ C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\LineData.h \
+ C:\Users\smora\OneDrive\Documents\URL\PA\ProyectoProgramacionA02\Hashear.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
@@ -173,9 +188,4 @@ CMakeFiles/ProyectoAplicacion02.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h
+ C:/Program\ Files/JetBrains/CLion\ 2023.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare
