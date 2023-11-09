@@ -13,6 +13,9 @@
 #include <queue>
 #include <fstream>
 #include <iterator>
+#include <limits>
+#include <unordered_set>
+
 
 
 #include "Node.h"
@@ -49,6 +52,7 @@ public:
 
     int countColumns(const std::string& value);
     void printByValue();//pruebas
+
 
     void binarySearchByColumn(int column, const std::string& value);
 

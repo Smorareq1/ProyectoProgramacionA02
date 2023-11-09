@@ -198,8 +198,13 @@ void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& val
     std::vector<std::string> results; // Vector para almacenar las coincidencias
 
     // Búsqueda binaria
-    Node* current = head;
-    while (current != nullptr) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2; // Evitar desbordamiento
+
+        Node* current = getNodeAt(mid);
         std::istringstream stream(current->value);
         std::string token;
         for (int i = 0; i < column; ++i) {
@@ -207,24 +212,27 @@ void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& val
         }
 
         if (token == value) {
+            // Encontrado el valor en la columna especificada y no se ha impreso antes
             results.push_back(current->value);
-        } else if (token > value) {
-            // Como la lista está ordenada, si el token es mayor, no hay necesidad de buscar en la parte derecha.
-            break;
+
         }
 
-        current = current->next;
+        if (token <= value) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
     }
 
     // Mostrar las coincidencias encontradas
     if (!results.empty()) {
-        std::cout << "Coincidencias encontradas:" << std::endl;
+        std::cout << "Coincidencias encontradas en columna " << column << ":" << std::endl;
         for (const auto& match : results) {
             std::cout << match << std::endl;
         }
     }
 
-    // Si hay más columnas, realizar la búsqueda binaria en la siguiente columna
+    // Llamada recursiva para la siguiente columna
     if (column < countColumns(head->value)) {
         binarySearchByColumn(column + 1, value);
     }
