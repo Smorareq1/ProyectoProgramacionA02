@@ -13,6 +13,12 @@ myDoubleLinkedList *listavalue = new myDoubleLinkedList();
 Hashear *hashear = new Hashear();
 
 /////////////////////////////////////////////////////////////////////////////////////
+void pruebas(){
+    listavalue->sortColumns(2);
+    cout<<listavalue->countColumns("key_p_1,A,47h67owu47,797xruek0e,key_p_28")<<endl;
+    listavalue->printByValue();
+}
+/////////////////////////////////////////////////////////////////////////////////////
 void cargarDatos(){
 
     string nombreArchivo;
@@ -46,7 +52,7 @@ void buscarPorValor(){
     std::cin.ignore();
     std::getline(std::cin, valor);
 
-    listavalue->binarySearchByColumn(0,valor);
+    listavalue->binarySearchByColumn(1,valor);
 
     menuPrincipal();
 }
@@ -98,7 +104,6 @@ void menuPrincipal(){
 }
 /////////////////////////////////////////////////////////////////////////////////////
 int main() {
-
     menuPrincipal();
 
     return 0;
