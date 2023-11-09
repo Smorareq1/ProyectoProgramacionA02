@@ -12,9 +12,11 @@ myDoubleLinkedList *listahash = new myDoubleLinkedList();
 myDoubleLinkedList *listavalue = new myDoubleLinkedList();
 Hashear *hashear = new Hashear();
 
+
+
 /////////////////////////////////////////////////////////////////////////////////////
 void pruebas(){
-    listavalue->sortColumns(2);
+    listavalue->sortColumns(5);
     cout<<listavalue->countColumns("key_p_1,A,47h67owu47,797xruek0e,key_p_28")<<endl;
     listavalue->printByValue();
 }
@@ -58,6 +60,7 @@ void buscarPorValor(){
 }
 /////////////////////////////////////////////////////////////////////////////////////
 void salir(){
+
     cout<<"Gracias por usar el programa"<<endl;
     exit(0);
 }
