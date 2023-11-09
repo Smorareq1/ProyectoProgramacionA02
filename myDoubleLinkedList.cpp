@@ -212,9 +212,47 @@ void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& val
         }
 
         if (token == value) {
-            // Encontrado el valor en la columna especificada y no se ha impreso antes
             results.push_back(current->value);
 
+            // Buscar a la izquierda
+            int leftIndex = mid - 1;
+            while (leftIndex >= 0) {
+                Node* leftNode = getNodeAt(leftIndex);
+                std::istringstream leftStream(leftNode->value);
+                std::string leftToken;
+                for (int i = 0; i < column; ++i) {
+                    std::getline(leftStream, leftToken, ',');
+                }
+
+                if (leftToken == value) {
+                    results.push_back(leftNode->value);
+                } else {
+                    break;  // Romper si no hay más coincidencias a la izquierda
+                }
+
+                --leftIndex;
+            }
+
+            // Buscar a la derecha
+            int rightIndex = mid + 1;
+            while (rightIndex < size) {
+                Node* rightNode = getNodeAt(rightIndex);
+                std::istringstream rightStream(rightNode->value);
+                std::string rightToken;
+                for (int i = 0; i < column; ++i) {
+                    std::getline(rightStream, rightToken, ',');
+                }
+
+                if (rightToken == value) {
+                    results.push_back(rightNode->value);
+                } else {
+                    break;  // Romper si no hay más coincidencias a la derecha
+                }
+
+                ++rightIndex;
+            }
+
+            break;  // Romper después de manejar todas las coincidencias
         }
 
         if (token <= value) {
@@ -237,6 +275,8 @@ void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& val
         binarySearchByColumn(column + 1, value);
     }
 }
+
+
 
 
 
