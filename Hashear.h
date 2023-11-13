@@ -23,6 +23,8 @@ public:
 
 
     void procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleListHash, myDoubleLinkedList* myDoubleLinkedListValues);
+    /////
+    std::vector<std::string> stringToVector(std::string& str);
 
 
 };

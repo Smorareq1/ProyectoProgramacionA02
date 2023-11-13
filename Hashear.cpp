@@ -14,13 +14,27 @@ std::string Hashear::hashKey(const std::string& key) {
     return std::to_string(hashedKey).substr(0, 10);
 }
 
+std::vector<std::string> Hashear::stringToVector(std::string &str) {
+    std::vector<std::string> result;
+    std::stringstream ss(str);
+    std::string token;
+
+    while (std::getline(ss, token, ',')) {
+        result.push_back(token);
+    }
+
+    return result;
+}
+
 
 void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList* myDoubleListHash, myDoubleLinkedList* myDoubleLinkedListValues) {
     std::ifstream archivo(rutaArchivo);
+
     if (!archivo) {
         std::cout << "No se pudo abrir el archivo: " << rutaArchivo << '\n';
         return;
     }
+
     std::string linea;
     while (std::getline(archivo, linea)) {
         std::istringstream lineStream(linea);
@@ -33,9 +47,11 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
 
         std::string hashedKey = hashKey(key);
         LineData lineData(hashedKey, restOfLine);
-        myDoubleListHash->addElement(lineData);
-        myDoubleLinkedListValues->addElementByValue(restOfLine);
 
+        myDoubleListHash->addElement(lineData);
+        //Values//
+        std::vector<std::string> result = stringToVector(restOfLine);
+        myDoubleLinkedListValues->addVector(result);
     }
 
     archivo.close();

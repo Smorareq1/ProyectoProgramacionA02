@@ -7,11 +7,14 @@
 
 #include "LineData.h"
 #include <string>
+#include <vector>
 
 class Node {
 public:
     LineData data;
     std::string value;
+    //
+    std::vector<std::string> stringArray;
 
     Node* next;
     Node* prev;
@@ -19,6 +22,7 @@ public:
     // Constructores
     Node(const LineData& newData);
     Node(const std::string& newValue);
+    Node(const std::vector<std::string>& stringArray);
 };
 
 

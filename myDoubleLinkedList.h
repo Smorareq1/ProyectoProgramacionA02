@@ -42,19 +42,15 @@ public:
     Node* partition(Node* low, Node* high);
     void quickSort(Node* low, Node* high);
     void sortList();
-    ///////////////////////////// Por valor
-    Node* getNodeAt(int index) const;
-    void addElementByValue(std::string value);
+    /////////////////////////////
+    ////////// Iterando ////////////
+    void addVector(const std::vector<std::string>& stringArray);
+    void printListVector();
+    void binarySearchVector(const std::string& value);
+    void sortVector(std::vector<std::string>& stringArray);
+    /////////////////////////////
 
 
-    void sortColumns(int column);
-
-
-    int countColumns(const std::string& value);
-    void printByValue();//pruebas
-
-
-    void binarySearchByColumn(int column, const std::string& value);
 
 };
 

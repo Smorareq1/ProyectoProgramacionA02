@@ -6,5 +6,6 @@
 
 Node::Node(const LineData& newData) : data(newData), next(nullptr), prev(nullptr) {}
 
-Node::Node(const std::string& newValue) : value(newValue), next(nullptr), prev(nullptr) {}
+//
+Node::Node(const std::vector<std::string>& stringArray) : stringArray(stringArray) {}
 
