@@ -88,33 +88,26 @@ void myDoubleLinkedList::addElement(const LineData& data){
     size++;
 }
 
-Node* myDoubleLinkedList::partition(Node* low, Node* high) {
-    LineData pivot = high->data;
-    Node* i = low->prev;
+void myDoubleLinkedList::sortHashList() {
+    std::vector<LineData> elementos;
 
-    for (Node* j = low; j != high; j = j->next) {
-        if (j->data < pivot) {
-            i = (i == nullptr) ? low : i->next;
-            std::swap(i->data, j->data);
+    while (head != nullptr) {
+        elementos.push_back(head->data);
+        Node* temp = head;
+        head = head->next;
+        if (head) {
+            head->prev = nullptr;
         }
+        delete temp;
     }
 
-    i = (i == nullptr) ? low : i->next;
-    std::swap(i->data, high->data);
-    return i;
-}
 
+    std::sort(elementos.begin(), elementos.end());
+    clearList();
 
-void myDoubleLinkedList::quickSort(Node* low, Node* high) {
-    if (high != nullptr && low != high && low != high->next) {
-        Node* pivot = partition(low, high);
-        quickSort(low, pivot->prev);
-        quickSort(pivot->next, high);
+    for (const LineData& elemento : elementos) {
+        addElement(elemento);
     }
-}
-
-void myDoubleLinkedList::sortList() {
-    quickSort(head, tail);
 }
 /////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////// BUSQUEDA POR VALOR
@@ -125,8 +118,6 @@ void myDoubleLinkedList::sortVector(std::vector<std::string>& stringArray) {
 
 
 void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) {
-    //std::vector<std::string> sortedArray = stringArray;
-    //sortVector(sortedArray);
 
     Node* newNode = new Node{stringArray};
     if (head == nullptr) {
@@ -160,16 +151,19 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
         if (!current->stringArray.empty()) {
             std::vector<std::string>& array = current->stringArray;
 
-            for (const auto& element : array) {
-                if (!element.empty() && element == value) {
-                    found = true;
-                    std::cout << "Elemento encontrado en la lista: ";
-                    for (const auto& element : array) {
-                        std::cout << element << " ";
-                    }
-                    std::cout << std::endl;
-                    break;  // Salir del bucle interno si se encuentra una coincidencia
+            // Asegúrate de que el vector esté ordenado antes de la búsqueda
+            std::sort(array.begin(), array.end());
+
+            // Encuentra el rango de coincidencias en el vector ordenado
+            auto range = std::equal_range(array.begin(), array.end(), value);
+
+            if (range.first != range.second) {
+                found = true;
+                std::cout << "Vector completo: ";
+                for (const auto& element : array) {
+                    std::cout << element << " ";
                 }
+                std::cout << std::endl;
             }
         }
 
@@ -180,6 +174,7 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
         std::cout << "Valor no encontrado." << std::endl;
     }
 }
+
 
 
 

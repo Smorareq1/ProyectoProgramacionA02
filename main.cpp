@@ -26,6 +26,9 @@ void cargarDatos(){
     std::cin.ignore();
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, listahash, listavalue);
+    cout<<"Ordenando Lista"<<endl;
+    listahash->sortHashList();
+
 
     cout<<"Tamanio de las listas: "<<endl;
     cout<<listahash->sizeOfMyList()<<endl;
@@ -40,8 +43,6 @@ void buscarPorKey(){
     cout<<"Ingrese la key que desea buscar: "<<endl;
     std::cin.ignore();
     std::getline(std::cin, key);
-
-    listahash->sortList();
 
     result = hashear->hashKey(key);
     listahash->binarySearch(result);
@@ -60,7 +61,6 @@ void buscarPorValor(){
 }
 /////////////////////////////////////////////////////////////////////////////////////
 void salir(){
-    pruebas();
     cout<<"Gracias por usar el programa"<<endl;
     exit(0);
 }

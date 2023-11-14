@@ -20,8 +20,8 @@ public:
     Node* prev;
 
     // Constructores
+    Node();
     Node(const LineData& newData);
-    Node(const std::string& newValue);
     Node(const std::vector<std::string>& stringArray);
 };
 
