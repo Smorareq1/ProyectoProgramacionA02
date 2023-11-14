@@ -125,10 +125,10 @@ void myDoubleLinkedList::sortVector(std::vector<std::string>& stringArray) {
 
 
 void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) {
-    std::vector<std::string> sortedArray = stringArray;
-    sortVector(sortedArray);
+    //std::vector<std::string> sortedArray = stringArray;
+    //sortVector(sortedArray);
 
-    Node* newNode = new Node{sortedArray};
+    Node* newNode = new Node{stringArray};
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
@@ -153,35 +153,40 @@ void myDoubleLinkedList::printListVector() {
 
 
 void myDoubleLinkedList::binarySearchVector(const std::string &value) {
-    std::vector<std::vector<std::string>> results;
     Node* current = head;
+    bool found = false;
 
     while (current) {
-        if (current->stringArray.empty()) {
-            current = current->next;
-            continue;  // Saltar iteración si el vector está vacío
-        }
+        if (!current->stringArray.empty()) {
+            std::vector<std::string>& array = current->stringArray;
 
-        std::vector<std::string>& array = current->stringArray;
-        int arraySize = array.size();
-
-        for (int i = 0; i < arraySize; ++i) {
-            if (array[i] == value) {
-                results.push_back(array);
-                break;  // Salir del bucle una vez que se encuentra una coincidencia
+            for (const auto& element : array) {
+                if (!element.empty() && element == value) {
+                    found = true;
+                    std::cout << "Elemento encontrado en la lista: ";
+                    for (const auto& element : array) {
+                        std::cout << element << " ";
+                    }
+                    std::cout << std::endl;
+                    break;  // Salir del bucle interno si se encuentra una coincidencia
+                }
             }
         }
 
         current = current->next;
     }
 
-    for (const auto& result : results) {
-        for (const auto& element : result) {
-            std::cout << element << " ";
-        }
-        std::cout << std::endl;
+    if (!found) {
+        std::cout << "Valor no encontrado." << std::endl;
     }
 }
+
+
+
+
+
+
+
 
 
 

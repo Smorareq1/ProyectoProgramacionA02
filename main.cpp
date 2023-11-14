@@ -27,7 +27,7 @@ void cargarDatos(){
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, listahash, listavalue);
 
-    cout<<"Se ha cargado el archivo correctamente"<<endl;
+    cout<<"Tamanio de las listas: "<<endl;
     cout<<listahash->sizeOfMyList()<<endl;
     cout<<listavalue->sizeOfMyList()<<endl;
 
