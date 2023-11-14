@@ -39,9 +39,9 @@ public:
 
     ///////////////////////////// Hashed Key
     void addElement(const LineData& data);
-    Node* partition(Node* low, Node* high);
-    void quickSort(Node* low, Node* high);
-    void sortList();
+    void sortHashList();
+
+
     /////////////////////////////
     ////////// Iterando ////////////
     void addVector(const std::vector<std::string>& stringArray);

@@ -4,8 +4,8 @@
 
 #include "Node.h"
 
-Node::Node(const LineData& newData) : data(newData), next(nullptr), prev(nullptr) {}
 
-//
-Node::Node(const std::vector<std::string>& stringArray) : stringArray(stringArray) {}
+Node::Node(){}
+Node::Node(const LineData& newData) : data(newData), next(nullptr), prev(nullptr) {}
+Node::Node(const std::vector<std::string>& stringArray) : stringArray(stringArray), next(nullptr), prev(nullptr) {}
 
