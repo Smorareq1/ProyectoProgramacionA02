@@ -16,9 +16,7 @@ Hashear *hashear = new Hashear();
 
 /////////////////////////////////////////////////////////////////////////////////////
 void pruebas(){
-    listavalue->sortColumns(5);
-    cout<<listavalue->countColumns("key_p_1,A,47h67owu47,797xruek0e,key_p_28")<<endl;
-    listavalue->printByValue();
+    listavalue->printListVector();
 }
 /////////////////////////////////////////////////////////////////////////////////////
 void cargarDatos(){
@@ -28,8 +26,8 @@ void cargarDatos(){
     std::cin.ignore();
     std::getline(std::cin, nombreArchivo);
     hashear->procesarArchivo(nombreArchivo, listahash, listavalue);
-    listahash->sortList();
 
+    cout<<"Tamanio de las listas: "<<endl;
     cout<<listahash->sizeOfMyList()<<endl;
     cout<<listavalue->sizeOfMyList()<<endl;
 
@@ -43,6 +41,8 @@ void buscarPorKey(){
     std::cin.ignore();
     std::getline(std::cin, key);
 
+    listahash->sortList();
+
     result = hashear->hashKey(key);
     listahash->binarySearch(result);
     menuPrincipal();
@@ -54,13 +54,13 @@ void buscarPorValor(){
     std::cin.ignore();
     std::getline(std::cin, valor);
 
-    listavalue->binarySearchByColumn(1,valor);
+    listavalue->binarySearchVector(valor);
 
     menuPrincipal();
 }
 /////////////////////////////////////////////////////////////////////////////////////
 void salir(){
-
+    pruebas();
     cout<<"Gracias por usar el programa"<<endl;
     exit(0);
 }

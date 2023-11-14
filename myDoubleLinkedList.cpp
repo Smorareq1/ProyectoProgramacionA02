@@ -117,17 +117,18 @@ void myDoubleLinkedList::sortList() {
     quickSort(head, tail);
 }
 /////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////// BUSQUEDA POR VALOR
 
-void myDoubleLinkedList::printByValue() {
-    Node* current = head;
-    while (current) {
-        std::cout << current->value << std::endl;
-        current = current->next;
-    }
+void myDoubleLinkedList::sortVector(std::vector<std::string>& stringArray) {
+    std::sort(stringArray.begin(), stringArray.end());
 }
 
-void myDoubleLinkedList::addElementByValue(std::string value){
-    Node* newNode = new Node{value};
+
+void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) {
+    //std::vector<std::string> sortedArray = stringArray;
+    //sortVector(sortedArray);
+
+    Node* newNode = new Node{stringArray};
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
@@ -138,143 +139,61 @@ void myDoubleLinkedList::addElementByValue(std::string value){
     }
     size++;
 }
-/////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-void myDoubleLinkedList::sortColumns(int column) {
-    std::vector<Node*> nodes;
+
+void myDoubleLinkedList::printListVector() {
     Node* current = head;
     while (current) {
-        nodes.push_back(current);
+        for (int i = 0; i < current->stringArray.size(); ++i) {
+            std::cout << current->stringArray[i] << ",";
+        }
+        std::cout << std::endl;
         current = current->next;
     }
-
-    std::sort(nodes.begin(), nodes.end(), [column](Node* a, Node* b) {
-        std::istringstream streamA(a->value);
-        std::istringstream streamB(b->value);
-        std::string tokenA, tokenB;
-        for (int i = 0; i < column; ++i) {
-            std::getline(streamA, tokenA, ',');
-            std::getline(streamB, tokenB, ',');
-        }
-        return tokenA < tokenB;
-    });
-
-    head = nodes[0];
-    tail = nodes.back();
-    for (size_t i = 1; i < nodes.size(); ++i) {
-        nodes[i]->prev = nodes[i - 1];
-        nodes[i - 1]->next = nodes[i];
-    }
-    tail->next = nullptr;
-}
-/////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-int myDoubleLinkedList::countColumns(const std::string &value) {
-    std::istringstream stream(value);
-    std::string token;
-    int count = 0;
-    while (std::getline(stream, token, ',')) {
-        ++count;
-    }
-    return count;
 }
 
-Node* myDoubleLinkedList::getNodeAt(int index) const {
-    if (index < 0 || index >= size) {
-        return nullptr;
-    }
 
+void myDoubleLinkedList::binarySearchVector(const std::string &value) {
     Node* current = head;
-    for (int i = 0; i < index; ++i) {
+    bool found = false;
+
+    while (current) {
+        if (!current->stringArray.empty()) {
+            std::vector<std::string>& array = current->stringArray;
+
+            for (const auto& element : array) {
+                if (!element.empty() && element == value) {
+                    found = true;
+                    std::cout << "Elemento encontrado en la lista: ";
+                    for (const auto& element : array) {
+                        std::cout << element << " ";
+                    }
+                    std::cout << std::endl;
+                    break;  // Salir del bucle interno si se encuentra una coincidencia
+                }
+            }
+        }
+
         current = current->next;
     }
 
-    return current;
-}
-
-
-void myDoubleLinkedList::binarySearchByColumn(int column, const std::string& value) {
-    sortColumns(column);
-    std::vector<std::string> results; // Vector para almacenar las coincidencias
-
-    // Búsqueda binaria
-    int left = 0;
-    int right = size - 1;
-
-    while (left <= right) {
-        int mid = left + (right - left) / 2; // Evitar desbordamiento
-
-        Node* current = getNodeAt(mid);
-        std::istringstream stream(current->value);
-        std::string token;
-        for (int i = 0; i < column; ++i) {
-            std::getline(stream, token, ',');
-        }
-
-        if (token == value) {
-            results.push_back(current->value);
-
-            // Buscar a la izquierda
-            int leftIndex = mid - 1;
-            while (leftIndex >= 0) {
-                Node* leftNode = getNodeAt(leftIndex);
-                std::istringstream leftStream(leftNode->value);
-                std::string leftToken;
-                for (int i = 0; i < column; ++i) {
-                    std::getline(leftStream, leftToken, ',');
-                }
-
-                if (leftToken == value) {
-                    results.push_back(leftNode->value);
-                } else {
-                    break;  // Romper si no hay más coincidencias a la izquierda
-                }
-
-                --leftIndex;
-            }
-
-            // Buscar a la derecha
-            int rightIndex = mid + 1;
-            while (rightIndex < size) {
-                Node* rightNode = getNodeAt(rightIndex);
-                std::istringstream rightStream(rightNode->value);
-                std::string rightToken;
-                for (int i = 0; i < column; ++i) {
-                    std::getline(rightStream, rightToken, ',');
-                }
-
-                if (rightToken == value) {
-                    results.push_back(rightNode->value);
-                } else {
-                    break;  // Romper si no hay más coincidencias a la derecha
-                }
-
-                ++rightIndex;
-            }
-
-            break;  // Romper después de manejar todas las coincidencias
-        }
-
-        if (token <= value) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-
-    // Mostrar las coincidencias encontradas
-    if (!results.empty()) {
-        std::cout << "Coincidencias encontradas en columna " << column << ":" << std::endl;
-        for (const auto& match : results) {
-            std::cout << match << std::endl;
-        }
-    }
-
-    // Llamada recursiva para la siguiente columna
-    if (column < countColumns(head->value)) {
-        binarySearchByColumn(column + 1, value);
+    if (!found) {
+        std::cout << "Valor no encontrado." << std::endl;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
