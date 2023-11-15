@@ -151,13 +151,11 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
         if (!current->stringArray.empty()) {
             std::vector<std::string>& array = current->stringArray;
 
-
+            // Ordenar el vector
             std::sort(array.begin(), array.end());
 
-            // Busqueda binaria
-            auto range = std::equal_range(array.begin(), array.end(), value);
-
-            if (range.first != range.second) {
+            // Buscar el valor en el vector ordenado
+            if (std::binary_search(array.begin(), array.end(), value)) {
                 found = true;
                 std::cout << "Vector completo: ";
                 for (const auto& element : array) {
@@ -174,6 +172,7 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
         std::cout << "Valor no encontrado." << std::endl;
     }
 }
+
 
 
 
