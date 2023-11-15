@@ -20,7 +20,7 @@ void myDoubleLinkedList::clearList() {
 }
 
 
-void myDoubleLinkedList::print() {
+void myDoubleLinkedList::print() { //[pruebas]
     Node* current = head;
     while (current) {
         std::cout << current->data.hashedKey<< std::endl;
@@ -28,7 +28,7 @@ void myDoubleLinkedList::print() {
     }
 }
 
-void myDoubleLinkedList::binarySearch(std::string value) {
+void myDoubleLinkedList::binarySearch(std::string value) { //Busqueda binaria por hashedKey
     int low = 0;
     int high = size - 1;
     bool found = false;
@@ -151,10 +151,10 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
         if (!current->stringArray.empty()) {
             std::vector<std::string>& array = current->stringArray;
 
-            // Asegúrate de que el vector esté ordenado antes de la búsqueda
+
             std::sort(array.begin(), array.end());
 
-            // Encuentra el rango de coincidencias en el vector ordenado
+            // Busqueda binaria
             auto range = std::equal_range(array.begin(), array.end(), value);
 
             if (range.first != range.second) {
