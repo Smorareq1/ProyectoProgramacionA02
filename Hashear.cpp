@@ -9,9 +9,9 @@ Hashear::Hashear() {
 }
 
 std::string Hashear::hashKey(const std::string& key) { //Funcion para hashear la key
-    std::hash<std::string> hasher;
+    std::hash<std::string> hasher; //hash de la libreria estandar
     std::size_t hashedKey = hasher(key);
-    return std::to_string(hashedKey).substr(0, 10);
+    return std::to_string(hashedKey).substr(0, 10); //Se retorna el hash de la key con un string
 }
 
 std::vector<std::string> Hashear::stringToVector(std::string &str) { //Funcion para convertir un string en un vector
@@ -45,13 +45,13 @@ void Hashear::procesarArchivo(const std::string& rutaArchivo, myDoubleLinkedList
             restOfLine = linea;  // restOfLine contiene toda la línea original
         }
 
-        std::string hashedKey = hashKey(key);
-        LineData lineData(hashedKey, restOfLine);
+        std::string hashedKey = hashKey(key); //Se hashea la key
+        LineData lineData(hashedKey, restOfLine);   // Se crea un objeto LineData
 
-        myDoubleListHash->addElement(lineData);
+        myDoubleListHash->addElement(lineData); //Se agrega el objeto a la lista de hash
         //Values//
-        std::vector<std::string> result = stringToVector(restOfLine);
-        myDoubleLinkedListValues->addVector(result);
+        std::vector<std::string> result = stringToVector(restOfLine);   // Se convierte a vector
+        myDoubleLinkedListValues->addVector(result); //Se agrega el vector a la lista de valores
     }
 
     archivo.close();
