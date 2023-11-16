@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Creacion de variables en el heap por que se requiere conservar las funciones y listas
 void menuPrincipal();
 myDoubleLinkedList *listahash = new myDoubleLinkedList();
 myDoubleLinkedList *listavalue = new myDoubleLinkedList();
@@ -15,11 +16,11 @@ Hashear *hashear = new Hashear();
 
 
 /////////////////////////////////////////////////////////////////////////////////////
-void pruebas(){
+void pruebas(){ //pruebas de las listas
     listavalue->printListVector();
 }
 /////////////////////////////////////////////////////////////////////////////////////
-void cargarDatos(){
+void cargarDatos(){ //Funcion para procesar el archivo y cargar los datos en las listas
 
     string nombreArchivo;
     cout<<"Ingrese el nombre del archivo que desea cargar: "<<endl;
@@ -38,7 +39,7 @@ void cargarDatos(){
 
 }
 /////////////////////////////////////////////////////////////////////////////////////
-void buscarPorKey(){
+void buscarPorKey(){ //Funcion para buscar por key
     string key, result;
     cout<<"Ingrese la key que desea buscar: "<<endl;
     std::cin.ignore();
@@ -49,7 +50,7 @@ void buscarPorKey(){
     menuPrincipal();
 }
 /////////////////////////////////////////////////////////////////////////////////////
-void buscarPorValor(){
+void buscarPorValor(){ //Funcion para buscar por valor
     string valor, result;
     cout<<"Ingrese el valor que desea buscar: "<<endl;
     std::cin.ignore();
@@ -60,12 +61,12 @@ void buscarPorValor(){
     menuPrincipal();
 }
 /////////////////////////////////////////////////////////////////////////////////////
-void salir(){
+void salir(){ //Funcion para salir del programa
     cout<<"Gracias por usar el programa"<<endl;
     exit(0);
 }
 /////////////////////////////////////////////////////////////////////////////////////
-void menuPrincipal(){
+void menuPrincipal(){ //Funcion para mostrar el menu principal
 
     int opcion;
     char entrada[100];

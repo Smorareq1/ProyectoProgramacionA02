@@ -1,13 +1,13 @@
 #include "myDoubleLinkedList.h"
 #include <iostream>
 
-myDoubleLinkedList::myDoubleLinkedList() : head(nullptr), tail(nullptr), size(0) {}
+myDoubleLinkedList::myDoubleLinkedList() : head(nullptr), tail(nullptr), size(0) {} //Constructor
 
-myDoubleLinkedList::~myDoubleLinkedList() {
+myDoubleLinkedList::~myDoubleLinkedList() { //Destructor
     clearList();
 }
 
-void myDoubleLinkedList::clearList() {
+void myDoubleLinkedList::clearList() { //Funcion para limpiar la lista
     Node* current = head;
     while (current) {
         Node* next = current->next;
@@ -71,7 +71,7 @@ void myDoubleLinkedList::binarySearch(std::string value) { //Busqueda binaria po
 }
 
 
-int myDoubleLinkedList::sizeOfMyList() {
+int myDoubleLinkedList::sizeOfMyList() { //Funcion para obtener el tamanio de la lista
     return size;
 }
 ///////////////////////////////////////////////////////
@@ -88,10 +88,10 @@ void myDoubleLinkedList::addElement(const LineData& data){
     size++;
 }
 
-void myDoubleLinkedList::sortHashList() {
+void myDoubleLinkedList::sortHashList() { //Funcion para ordenar la lista
     std::vector<LineData> elementos;
 
-    while (head != nullptr) {
+    while (head != nullptr) { //Meter los datos al vector
         elementos.push_back(head->data);
         Node* temp = head;
         head = head->next;
@@ -102,22 +102,17 @@ void myDoubleLinkedList::sortHashList() {
     }
 
 
-    std::sort(elementos.begin(), elementos.end());
-    clearList();
+    std::sort(elementos.begin(), elementos.end()); //Ordenar el vector
+    clearList(); //Limpiar la lista
 
-    for (const LineData& elemento : elementos) {
+    for (const LineData& elemento : elementos) { //Meter los datos ordenados a la lista
         addElement(elemento);
     }
 }
 /////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////// BUSQUEDA POR VALOR
 
-void myDoubleLinkedList::sortVector(std::vector<std::string>& stringArray) {
-    std::sort(stringArray.begin(), stringArray.end());
-}
-
-
-void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) {
+void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) {//Funcion para agregar un vector a la lista
 
     Node* newNode = new Node{stringArray};
     if (head == nullptr) {
@@ -131,7 +126,7 @@ void myDoubleLinkedList::addVector(const std::vector<std::string>& stringArray) 
     size++;
 }
 
-void myDoubleLinkedList::printListVector() {
+void myDoubleLinkedList::printListVector() { //pruebas
     Node* current = head;
     while (current) {
         for (int i = 0; i < current->stringArray.size(); ++i) {
@@ -143,12 +138,12 @@ void myDoubleLinkedList::printListVector() {
 }
 
 
-void myDoubleLinkedList::binarySearchVector(const std::string &value) {
+void myDoubleLinkedList::binarySearchVector(const std::string &value) { //Busqueda binaria por valor
     Node* current = head;
     bool found = false;
 
-    while (current) {
-        if (!current->stringArray.empty()) {
+    while (current) { //Recorrer la lista
+        if (!current->stringArray.empty()) { //Si el vector no esta vacio
             std::vector<std::string>& array = current->stringArray;
 
             // Ordenar el vector
@@ -167,7 +162,7 @@ void myDoubleLinkedList::binarySearchVector(const std::string &value) {
 
         current = current->next;
     }
-
+    // Si no se encontro el valor
     if (!found) {
         std::cout << "Valor no encontrado." << std::endl;
     }

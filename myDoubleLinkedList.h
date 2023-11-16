@@ -47,7 +47,6 @@ public:
     void addVector(const std::vector<std::string>& stringArray);
     void printListVector();
     void binarySearchVector(const std::string& value);
-    void sortVector(std::vector<std::string>& stringArray);
     /////////////////////////////
 
 
